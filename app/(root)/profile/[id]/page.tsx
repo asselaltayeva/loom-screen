@@ -1,20 +1,25 @@
-import Header from '@/components/Header'
-import React from 'react'
+import Header from "@/components/Header";
+import VideoCard from "@/components/VideoCard";
+import { dummyCards } from "@/constants";
+import React from "react";
 
-const page = async ({params} : ParamsWithSearch ) => {
-    const {id} = await params
+const page = async ({ params }: ParamsWithSearch) => {
+  const { id } = await params;
   return (
-    <div className='wrapper page'>
-        <Header 
-            subHeader='asselek@gmail.com'
-            title='Asselek'
-            userImg='/assets/images/dummy.jpg'
-            />
-            <div className='text-2xl font-karla'>
-                USER ID: {id}
-            </div>
-    </div>
-  )
-}
+    <div className="wrapper page">
+      <Header
+        subHeader="asselek@gmail.com"
+        title="Asselek"
+        userImg="/assets/images/dummy.jpg"
+      />
 
-export default page
+      <section className="video-grid">
+        {dummyCards.map((card) => (
+          <VideoCard key={card.id} {...card} />
+        ))}
+      </section>
+    </div>
+  );
+};
+
+export default page;
