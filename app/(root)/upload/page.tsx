@@ -12,12 +12,12 @@ const Page = () => {
     description: "",
     visibility: "public",
   });
-    const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const video = useFileInput(MAX_VIDEO_SIZE);
   const thumbnail = useFileInput(MAX_THUMBNAIL_SIZE);
 
-  const [error, setError] = useState<string | null>('');
+  const [error, setError] = useState<string | null>("");
 
   const handleInputChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -30,28 +30,27 @@ const Page = () => {
     e.preventDefault();
 
     setIsSubmitting(true);
-    try{
-        if(!video.file || !thumbnail.file){
-            setError("Please upload both video and thumbnail files.");
-            return;
-        }
+    try {
+      if (!video.file || !thumbnail.file) {
+        setError("Please upload both video and thumbnail files.");
+        return;
+      }
 
-        if(!formData.title || !formData.description){
-            setError("Please fill in all required fields.");
-            return;
-        }
+      if (!formData.title || !formData.description) {
+        setError("Please fill in all required fields.");
+        return;
+      }
 
-        //Upload video
-        //Upload thubnail to db
-        // Attach thumnail to video
-        //Save video record to db
-
+      //Upload video
+      //Upload thubnail to db
+      // Attach thumnail to video
+      //Save video record to db
     } catch {
-        console.log("Error uploading video");
+      console.log("Error uploading video");
     } finally {
-        setIsSubmitting(false);
+      setIsSubmitting(false);
     }
-  }
+  };
 
   return (
     <main className="wrapper-md upload-page">
@@ -59,7 +58,7 @@ const Page = () => {
 
       {error && <div className="error-field">{error}</div>}
 
-      <form 
+      <form
         className="rounded-20 shadow-20 gap-6 w-full flex flex-col px-5 py-7.5"
         onSubmit={handleSubmit}
       >
@@ -116,14 +115,8 @@ const Page = () => {
           onChange={handleInputChange}
         />
 
-        <button 
-            type="submit"
-            disabled={isSubmitting} 
-            className="submit-button">
-                {
-                    isSubmitting ? "Uploading..." : "Upload Video"
-                }
-
+        <button type="submit" disabled={isSubmitting} className="submit-button">
+          {isSubmitting ? "Uploading..." : "Upload Video"}
         </button>
       </form>
     </main>
