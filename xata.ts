@@ -8,7 +8,7 @@ const DatabaseClient = buildClient();
 
 const defaultOptions = {
   databaseURL:
-    "https://Assel-Altayeva-s-workspace-55p5tf.ap-southeast-2.xata.sh/db/Jim_looma",
+    "https://Assel-Altayeva-s-workspace-55p5tf.ap-southeast-2.xata.sh/db/jsm-looma",
   apiKey: process.env.XATA_API_KEY,
   branch: "main",
 };

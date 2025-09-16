@@ -1,5 +1,5 @@
 {
-  "databaseURL": "https://Assel-Altayeva-s-workspace-55p5tf.ap-southeast-2.xata.sh/db/Jim_looma",
+  "databaseURL": "https://Assel-Altayeva-s-workspace-55p5tf.ap-southeast-2.xata.sh/db/jsm-looma",
   "codegen": {
     "output": "src/xata.ts"
   }
